@@ -16,11 +16,12 @@
         <EditText
             android:id="@+id/etSearchText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:hint="Поиск..."
+            android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="" />
 
         <ImageButton
             android:id="@+id/btnSearch"
@@ -34,7 +35,7 @@
         android:id="@+id/rv_books"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
