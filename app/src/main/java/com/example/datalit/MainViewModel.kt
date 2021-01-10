@@ -34,7 +34,7 @@ class MainViewModel(private val repo: BooksRepo) : ViewModel() {
                     liveData.postValue(result);
 //                    mainAdapter?.addAll(items)
                 } else {
-                    val result: Result = Result(null, "Пустая данная")
+                    val result: Result = Result(null, "Данных больше нет!")
                     liveData.postValue(result);
                 }
             }

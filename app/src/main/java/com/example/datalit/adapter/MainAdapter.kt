@@ -23,9 +23,17 @@ class MainAdapter : BaseAdapter<BookItem, MainAdapter.MyViewHolder>() {
 
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvtitle = view.findViewById<TextView>(R.id.tv_title)
+        val tvauthors = view.findViewById<TextView>(R.id.tv_author)
+        val tvpublisher = view.findViewById<TextView>(R.id.tv_publisher)
 
         fun bind(data: BookItem) {
             tvtitle.text = data.volumeInfo.title
+            if (data.volumeInfo.authors != null) {
+                tvauthors.text = data.volumeInfo.authors.joinToString(separator = ", ")
+            } else {
+                tvauthors.text = "!Автор не известен!"
+            }
+            tvpublisher.text = data.volumeInfo.publisher
         }
 
     }
