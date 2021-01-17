@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        println("AAAAAA onCreate")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -37,31 +36,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    override fun onStart() {
-        println("AAAAAA onStart")
-        super.onStart()
-    }
-
-
-    override fun onResume() {
-        println("AAAAAA onResume")
-        super.onResume()
-    }
-
-    override fun onPause() {
-        println("AAAAAA onPause")
-        super.onPause()
-    }
-
-    override fun onStop() {
-        println("AAAAAA onStop")
-        super.onStop()
-    }
-
-    override fun onDestroy() {
-        println("AAAAAA onDestroy")
-        super.onDestroy()
-    }
 
     private fun initRecycler() {
         val recyclerView: RecyclerView = findViewById(R.id.rv_books)

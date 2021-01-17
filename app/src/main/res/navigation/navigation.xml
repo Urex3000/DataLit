@@ -15,7 +15,7 @@
     </activity>
     <fragment
         android:id="@+id/detailFragment3"
-        android:name="com.example.datalit.bookdetail.DetailFragment"
+        android:name="com.example.datalit.bookdetail.DetailActivity"
         android:label="DetailFragment">
         <action
             android:id="@+id/action_detailFragment3_to_mainActivity2"

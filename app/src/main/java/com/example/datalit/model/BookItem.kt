@@ -1,23 +1,26 @@
 package com.example.datalit.model
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class BookItem(
     @SerializedName("accessInfo")
-    val accessInfo: AccessInfo,
+    val accessInfo: AccessInfo?,
     @SerializedName("etag")
-    val etag: String,
+    val etag: String?,
     @SerializedName("id")
-    val id: String,
+    val id: String?,
     @SerializedName("kind")
-    val kind: String,
+    val kind: String?,
     @SerializedName("saleInfo")
-    val saleInfo: SaleInfo,
+    val saleInfo: SaleInfo?,
     @SerializedName("searchInfo")
-    val searchInfo: SearchInfo,
+    val searchInfo: SearchInfo?,
     @SerializedName("selfLink")
-    val selfLink: String,
+    val selfLink: String?,
     @SerializedName("volumeInfo")
-    val volumeInfo: VolumeInfo
-)
+    val volumeInfo: VolumeInfo?
+) : Parcelable

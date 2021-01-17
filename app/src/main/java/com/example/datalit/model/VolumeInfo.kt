@@ -1,51 +1,54 @@
 package com.example.datalit.model
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class VolumeInfo(
     @SerializedName("allowAnonLogging")
-    val allowAnonLogging: Boolean,
+    val allowAnonLogging: Boolean?,
     @SerializedName("authors")
-    val authors: List<String>,
+    val authors: List<String>?,
     @SerializedName("averageRating")
-    val averageRating: Float,
+    val averageRating: Float?,
     @SerializedName("canonicalVolumeLink")
-    val canonicalVolumeLink: String,
+    val canonicalVolumeLink: String?,
     @SerializedName("categories")
-    val categories: List<String>,
+    val categories: List<String>?,
     @SerializedName("contentVersion")
-    val contentVersion: String,
+    val contentVersion: String?,
     @SerializedName("description")
-    val description: String,
+    val description: String?,
     @SerializedName("imageLinks")
-    val imageLinks: ImageLinks,
+    val imageLinks: ImageLinks?,
     @SerializedName("industryIdentifiers")
-    val industryIdentifiers: List<IndustryIdentifier>,
+    val industryIdentifiers: List<IndustryIdentifier>?,
     @SerializedName("infoLink")
-    val infoLink: String,
+    val infoLink: String?,
     @SerializedName("language")
-    val language: String,
+    val language: String?,
     @SerializedName("maturityRating")
-    val maturityRating: String,
+    val maturityRating: String?,
     @SerializedName("pageCount")
-    var pageCount: Int,
+    var pageCount: Int?,
     @SerializedName("panelizationSummary")
-    val panelizationSummary: PanelizationSummary,
+    val panelizationSummary: PanelizationSummary?,
     @SerializedName("previewLink")
-    val previewLink: String,
+    val previewLink: String?,
     @SerializedName("printType")
-    val printType: String,
+    val printType: String?,
     @SerializedName("publishedDate")
-    val publishedDate: String,
+    val publishedDate: String?,
     @SerializedName("publisher")
-    val publisher: String,
+    val publisher: String?,
     @SerializedName("ratingsCount")
-    val ratingsCount: Int,
+    val ratingsCount: Int?,
     @SerializedName("readingModes")
-    val readingModes: ReadingModes,
+    val readingModes: ReadingModes?,
     @SerializedName("subtitle")
-    val subtitle: String,
+    val subtitle: String?,
     @SerializedName("title")
-    val title: String
-)
+    val title: String?
+) : Parcelable
