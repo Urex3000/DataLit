@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainActivity2">
+    <activity
+        android:id="@+id/mainActivity2"
+        android:name="com.example.datalit.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main">
+        <action
+            android:id="@+id/action_mainActivity2_to_detailFragment3"
+            app:destination="@id/detailFragment3" />
+    </activity>
+    <fragment
+        android:id="@+id/detailFragment3"
+        android:name="com.example.datalit.bookdetail.DetailFragment"
+        android:label="DetailFragment">
+        <action
+            android:id="@+id/action_detailFragment3_to_mainActivity2"
+            app:destination="@id/mainActivity2" />
+    </fragment>
+</navigation>

@@ -29,7 +29,7 @@ data class VolumeInfo(
     @SerializedName("maturityRating")
     val maturityRating: String,
     @SerializedName("pageCount")
-    val pageCount: Int,
+    var pageCount: Int,
     @SerializedName("panelizationSummary")
     val panelizationSummary: PanelizationSummary,
     @SerializedName("previewLink")
