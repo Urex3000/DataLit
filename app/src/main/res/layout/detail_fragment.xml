@@ -32,18 +32,18 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/tvAuthor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:fontFamily="sans-serif-condensed"
             android:text="Авторы"
             android:textSize="14dp"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/ivBigBook"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/tvCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -51,11 +51,11 @@
             android:fontFamily="sans-serif-condensed"
             android:text="Жанр"
             android:textSize="20dp"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintStart_toEndOf="@+id/ivBigBook"
+            app:layout_constraintTop_toBottomOf="@+id/tvAuthor" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/tvPublisher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -63,33 +63,33 @@
             android:fontFamily="sans-serif-condensed"
             android:text="Публикация"
             android:textSize="20dp"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintStart_toEndOf="@+id/ivBigBook"
+            app:layout_constraintTop_toBottomOf="@+id/tvCategory" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/tvDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:fontFamily="sans-serif-condensed"
             android:text="Дата"
             android:textSize="14dp"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintStart_toEndOf="@+id/ivBigBook"
+            app:layout_constraintTop_toBottomOf="@+id/tvPublisher" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/tvPage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:fontFamily="sans-serif-condensed"
             android:text="Страниц"
             android:textSize="14dp"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+            app:layout_constraintStart_toEndOf="@+id/ivBigBook"
+            app:layout_constraintTop_toBottomOf="@+id/tvDate" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/ivBigBook"
             android:layout_width="120dp"
             android:layout_height="179dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -140,7 +140,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/desc"
+                    android:id="@+id/tvDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"

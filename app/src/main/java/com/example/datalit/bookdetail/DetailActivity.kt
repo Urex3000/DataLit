@@ -17,6 +17,41 @@ class DetailActivity : Activity() {
 
 
         tvTitle.text = bookItem?.volumeInfo?.title
+        val Desc = bookItem?.volumeInfo?.description
+        if (Desc != null) {
+            tvDesc.text = Desc
+        } else {
+            tvDesc.text =
+                "Описания нееету(( я не виноват, честно. Посмотрите другие книги, там точно есть!"
+        }
+        if (bookItem?.volumeInfo?.authors != null) {
+            tvAuthor.text = "Автор: " + bookItem.volumeInfo.authors.joinToString(separator = ", ")
+        } else {
+            tvAuthor.text = "Автор отсутствует"
+        }
+        if (bookItem?.volumeInfo?.categories != null) {
+            tvCategory.text =
+                "Жанр: " + bookItem.volumeInfo.categories.joinToString(separator = ", ")
+        } else {
+            tvCategory.text = "Жанр отсутствует"
+        }
+//        val url = bookItem?.volumeInfo?.imageLinks?.thumbnail?.replace("http:", "https:")
+        if (bookItem?.volumeInfo?.publisher != null) {
+            tvPublisher.text = bookItem?.volumeInfo?.publisher
+        } else {
+            tvPublisher.text = "Издательство отсутствует"
+        }
+        if (bookItem?.volumeInfo?.pageCount != null) {
+            tvPage.text = "Количество страниц: " + bookItem.volumeInfo.pageCount.toString()
+        } else {
+            tvPage.text = "Количество страниц: --"
+        }
+        if (bookItem?.volumeInfo?.publishedDate != null) {
+            tvDate.text = "Дата издания: " + bookItem.volumeInfo.publishedDate
+        } else {
+            tvDate.text = "Дата отсутствует"
+        }
+
 
     }
 
