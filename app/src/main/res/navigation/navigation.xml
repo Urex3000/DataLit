@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_mainActivity2_to_detailFragment3"
             app:destination="@id/detailFragment3" />
+        <action
+            android:id="@+id/action_mainActivity2_to_aboutActivity"
+            app:destination="@id/aboutActivity" />
     </activity>
     <fragment
         android:id="@+id/detailFragment3"
@@ -21,4 +24,13 @@
             android:id="@+id/action_detailFragment3_to_mainActivity2"
             app:destination="@id/mainActivity2" />
     </fragment>
+    <activity
+        android:id="@+id/aboutActivity"
+        android:name="com.example.datalit.about.AboutActivity"
+        android:label="activity_about"
+        tools:layout="@layout/activity_about">
+        <action
+            android:id="@+id/action_aboutActivity_to_mainActivity2"
+            app:destination="@id/mainActivity2" />
+    </activity>
 </navigation>

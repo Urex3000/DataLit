@@ -15,6 +15,10 @@ class DetailActivity : Activity() {
         val intent: Intent = getIntent()
         val bookItem = intent.getParcelableExtra<BookItem>("book")
 
+        /*val actionBar = action
+        actionBar!!.title = "Подробности"
+        actionBar.setDisplayHomeAsUpEnabled(true)*/
+
 
         tvTitle.text = bookItem?.volumeInfo?.title
         val Desc = bookItem?.volumeInfo?.description
@@ -52,10 +56,13 @@ class DetailActivity : Activity() {
             tvDate.text = "Дата отсутствует"
         }
 
-
     }
-
+    /*   override fun onNavigateUp(): Boolean{
+           onBackPressed()
+           return true
+       }*/
 }
+
 
 
 
