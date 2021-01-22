@@ -1,7 +1,9 @@
 package com.example.datalit.bookdetail
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import com.example.datalit.R
 import com.example.datalit.model.BookItem
@@ -41,7 +43,7 @@ class DetailActivity : Activity() {
         }
 //        val url = bookItem?.volumeInfo?.imageLinks?.thumbnail?.replace("http:", "https:")
         if (bookItem?.volumeInfo?.publisher != null) {
-            tvPublisher.text = bookItem?.volumeInfo?.publisher
+            tvPublisher.text = bookItem.volumeInfo.publisher
         } else {
             tvPublisher.text = "Издательство отсутствует"
         }
@@ -55,12 +57,24 @@ class DetailActivity : Activity() {
         } else {
             tvDate.text = "Дата отсутствует"
         }
+        btnGet.setOnClickListener {
+            bookItem?.volumeInfo?.previewLink?.let { it1 -> openNewTabWindow(it1, this) }
+        }
 
     }
+
     /*   override fun onNavigateUp(): Boolean{
            onBackPressed()
            return true
        }*/
+    fun openNewTabWindow(urls: String, context: Context) {
+        val uris = Uri.parse(urls)
+        val intents = Intent(Intent.ACTION_VIEW, uris)
+        val b = Bundle()
+        b.putBoolean("new_window", true)
+        intents.putExtras(b)
+        context.startActivity(intents)
+    }
 }
 
 
