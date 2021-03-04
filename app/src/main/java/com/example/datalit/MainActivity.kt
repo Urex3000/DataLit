@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.datalit.about.AboutActivity
 import com.example.datalit.adapter.MainAdapter
+import com.example.datalit.favorite.FavoriteActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
@@ -79,7 +80,9 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this, AboutActivity::class.java))
             }
 
-
+            R.id.favlist -> {
+                startActivity(Intent(this, FavoriteActivity::class.java))
+            }
         }
         return super.onOptionsItemSelected(item)
     }
