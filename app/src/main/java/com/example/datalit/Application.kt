@@ -1,6 +1,7 @@
 package com.example.datalit
 
 import android.app.Application
+import com.example.datalit.favorite.FavoriteViewModel
 import com.example.datalit.repo.BooksRepo
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -13,8 +14,16 @@ class MainApplication : Application() {
         println("AAA onCreate MainApp")
         super.onCreate()
         val appModule = module {
-            single { BooksRepo() }
-            viewModel { MainViewModel(get()) }
+            single {
+                BooksRepo()
+            }
+            viewModel {
+                MainViewModel(get())
+
+            }
+            viewModel {
+                FavoriteViewModel(get())
+            }
         }
         // Start Koin
         startKoin {

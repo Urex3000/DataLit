@@ -4,15 +4,15 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.datalit.SQlite.DatabaseBook
 import com.example.datalit.SQlite.DatabaseClass
-import com.example.datalit.SQlite.EntityClass
 import com.example.datalit.SQlite.FavoriteRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class FavoriteViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val getAllData: LiveData<List<EntityClass>>
+    val getAllData: LiveData<List<DatabaseBook>>
     private val repository: FavoriteRepository
 
     init {
@@ -21,10 +21,9 @@ class FavoriteViewModel(application: Application) : AndroidViewModel(application
         getAllData = repository.readAllData
     }
 
-    fun addUser(bookFav: EntityClass) {
+    fun addUser(bookFav: DatabaseBook) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addBookToFavorite(bookFav)
         }
     }
-
 }

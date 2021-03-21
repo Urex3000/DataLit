@@ -10,7 +10,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.datalit.R
-import com.example.datalit.SQlite.EntityClass
+import com.example.datalit.SQlite.DatabaseBook
 import com.example.datalit.favorite.FavoriteViewModel
 import com.example.datalit.model.BookItem
 import kotlinx.android.synthetic.main.detail_fragment.*
@@ -110,8 +110,8 @@ class DetailActivity : Activity() {
         val Smallthumbnail =
             bookItem?.volumeInfo?.imageLinks?.smallThumbnail?.replace("http:", "https:")
         val Link = bookItem?.volumeInfo?.previewLink
-        val data: EntityClass = EntityClass(
-            0, Auth, Catg, Desc, Smallthumbnail, Thumbnail, Page, Link, Date, Publ, Titl
+        val data: DatabaseBook = DatabaseBook(
+            null, Auth, Catg, Desc, Smallthumbnail, Thumbnail, Page, Link, Date, Publ, Titl
         )
         FavoriteViewModel(application).addUser(data)
 

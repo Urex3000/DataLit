@@ -10,11 +10,11 @@ interface DaoClass {
 
 
     @Query("SELECT * FROM fav_table ORDER BY id ASC")
-    fun getAll(): LiveData<List<EntityClass>>
+    fun getAll(): LiveData<List<DatabaseBook>>
 
     @Insert
-    fun insert(entityClass: EntityClass)
+    fun insert(databaseBook: DatabaseBook)
 
     @Insert
-    fun delete(entityClass: EntityClass)
+    fun delete(databaseBook: DatabaseBook)
 }
