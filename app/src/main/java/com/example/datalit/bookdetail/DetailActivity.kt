@@ -113,7 +113,7 @@ class DetailActivity : Activity() {
         val data: DatabaseBook = DatabaseBook(
             null, Auth, Catg, Desc, Smallthumbnail, Thumbnail, Page, Link, Date, Publ, Titl
         )
-        FavoriteViewModel(application).addUser(data)
+        FavoriteViewModel(application).addBook(data)
 
     }
 

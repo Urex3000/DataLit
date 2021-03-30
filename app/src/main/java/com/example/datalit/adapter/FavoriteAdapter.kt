@@ -66,6 +66,11 @@ class FavoriteAdapter() : BaseAdapter<DatabaseBook, FavoriteAdapter.FavViewHolde
                 itemView.context.startActivity(intent)
             }
 
+
+            /*   itemView.setOnLongClickListener {
+                   AlertDialog.Builder
+               }*/
+
 //Выгрузка картинок
 
             val url = bookItem.smallThumbnail

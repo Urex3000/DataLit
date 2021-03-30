@@ -21,9 +21,21 @@ class FavoriteViewModel(application: Application) : AndroidViewModel(application
         getAllData = repository.readAllData
     }
 
-    fun addUser(bookFav: DatabaseBook) {
+    fun addBook(bookFav: DatabaseBook) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addBookToFavorite(bookFav)
+        }
+    }
+
+    fun delBook(bookFav: DatabaseBook) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteFromFav(bookFav)
+        }
+    }
+
+    fun delFavList() {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteFavList()
         }
     }
 }

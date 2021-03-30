@@ -2,6 +2,7 @@ package com.example.datalit.SQlite
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 
@@ -15,6 +16,9 @@ interface DaoClass {
     @Insert
     fun insert(databaseBook: DatabaseBook)
 
-    @Insert
+    @Delete
     fun delete(databaseBook: DatabaseBook)
+
+    @Query("DELETE FROM fav_table")
+    fun deleteAll()
 }

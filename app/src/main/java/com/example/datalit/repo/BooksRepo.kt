@@ -13,9 +13,7 @@ class BooksRepo() {
         val call = BooksApi.retrofitService.getProperties(
             query, API_KEY
         )
-
         return call
-
     }
 
 }

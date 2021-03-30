@@ -9,4 +9,12 @@ class FavoriteRepository(private val daoClass: DaoClass) {
     fun addBookToFavorite(bookFav: DatabaseBook) {
         daoClass.insert(bookFav)
     }
+
+    fun deleteFromFav(bookFav: DatabaseBook) {
+        daoClass.delete(bookFav)
+    }
+
+    fun deleteFavList() {
+        daoClass.deleteAll()
+    }
 }
