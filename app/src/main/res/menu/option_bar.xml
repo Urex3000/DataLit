@@ -2,13 +2,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/btAbout"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_info"
-        android:title="About" />
+        android:id="@+id/bar_search"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Search"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="ifRoom" />
     <item
         android:icon="@drawable/ic_favorite_tool"
         android:id="@+id/favlist"
         app:showAsAction="ifRoom"
         android:title="Favorite" />
+    <item
+        android:id="@+id/btAbout"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_info"
+        android:title="О нас" />
+    <item
+        android:id="@+id/btSett"
+        android:icon="@drawable/ic_setting"
+        android:title="Настройки"
+        app:showAsAction="ifRoom" />
+
 </menu>

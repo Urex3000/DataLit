@@ -8,7 +8,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class RetailPrice(
     @SerializedName("amountInMicros")
-    val amountInMicros: Int,
+    val amountInMicros: Double?,
     @SerializedName("currencyCode")
-    val currencyCode: String
+    val currencyCode: String?
 ) : Parcelable

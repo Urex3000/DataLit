@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">DataLit</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="deepSearch">Испольуйте глубокий поиск если не
+        знаете всю информацию о конкретной книге, либо же
+        наоборот, знаете все о книге и хотите ее найти</string>
 </resources>
