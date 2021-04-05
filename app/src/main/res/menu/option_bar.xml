@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/bar_search"
@@ -7,20 +8,40 @@
         android:title="Search"
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="ifRoom" />
+
     <item
         android:icon="@drawable/ic_favorite_tool"
         android:id="@+id/favlist"
         app:showAsAction="ifRoom"
-        android:title="Favorite" />
+        android:title="Избранное" />
     <item
         android:id="@+id/btAbout"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_info"
         android:title="О нас" />
+
     <item
         android:id="@+id/btSett"
         android:icon="@drawable/ic_setting"
         android:title="Настройки"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom">
+        <menu>
+            <group
+                android:id="@+id/searchGroup"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/srchTitle"
+                    android:title="По названию" />
+                <item
+                    android:id="@+id/srchAuth"
+                    android:title="По автору" />
+                <item
+                    android:id="@+id/srchJanr"
+                    android:title="По жанру" />
+            </group>
+
+        </menu>
+    </item>
+
 
 </menu>

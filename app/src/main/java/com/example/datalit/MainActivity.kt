@@ -57,16 +57,32 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.option_bar, menu)
+
+        //поиск
         val mSearchBar = menu?.findItem(R.id.bar_search)
         val mSearchView = mSearchBar?.actionView as SearchView
         mSearchView.queryHint = "Искать..."
+
         mSearchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
+
+                val mSrchAuth = if (menu.findItem(R.id.srchAuth)?.isChecked == true) true else false
+                val mSrchTitle =
+                    if (menu.findItem(R.id.srchTitle)?.isChecked == true) true else false
+                val mSrchJanr = if (menu.findItem(R.id.srchJanr)?.isChecked == true) true else false
+                println("AAAAAAA $mSrchAuth, $mSrchTitle, $mSrchJanr")
+                //глубокий поиск
+                val needles = if (mSrchTitle) "intitle:"
+                else if (mSrchAuth) "inauthor:"
+                else if (mSrchJanr) "subject:"
+                else ""
+
+
                 if (mSearchView.isNotEmpty()) {
-                    myViewModel.loadData(p0.toString())
+                    myViewModel.loadData("$needles${p0.toString()}")
+                    println("AAAAAAA $needles ${p0.toString()}")
                 } else {
                     Toast.makeText(this@MainActivity, "Пустой запрос", Toast.LENGTH_LONG).show()
                 }
@@ -92,6 +108,33 @@ class MainActivity : AppCompatActivity() {
 
             R.id.favlist -> {
                 startActivity(Intent(this, FavoriteActivity::class.java))
+            }
+
+            R.id.srchTitle -> {
+                if (item.isChecked) {
+                    item.setChecked(false)
+                } else {
+                    item.setChecked(true)
+
+                }
+            }
+            R.id.srchAuth -> {
+                if (item.isChecked) {
+                    item.setChecked(false)
+
+                } else {
+                    item.setChecked(true)
+
+                }
+            }
+            R.id.srchJanr -> {
+                if (item.isChecked) {
+                    item.setChecked(false)
+
+                } else {
+                    item.setChecked(true)
+
+                }
             }
 
         }
