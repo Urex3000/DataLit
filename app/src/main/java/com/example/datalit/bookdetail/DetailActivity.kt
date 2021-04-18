@@ -40,7 +40,7 @@ class DetailActivity : Activity() {
             tvDesc.text = Desc
         } else {
             tvDesc.text =
-                "Описания нееету(( я не виноват, честно. Посмотрите другие книги, там точно есть!"
+                "Описание отсутствует"
         }
 
         if (Auth != null) {

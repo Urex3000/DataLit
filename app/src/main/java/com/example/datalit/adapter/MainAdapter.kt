@@ -1,11 +1,13 @@
 package com.example.datalit.adapter
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.datalit.R
@@ -25,13 +27,6 @@ class MainAdapter() :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(items[position])
 
-        /*   holder.itemView.setOnClickListener(object :View.OnClickListener{
-               override fun onClick(view: View?) {
-                   val activity = view!!.context as AppCompatActivity
-                   val detailFragment = DetailFragment()
-                   activity.supportFragmentManager.beginTransaction().replace(R.id.rv_books, detailFragment)
-               }
-           })*/
     }
 
 
@@ -71,14 +66,42 @@ class MainAdapter() :
             } else {
                 tvcategory.text = "Без категорий"
             }
+            //Долгое нажатие
+
+
+            itemView.setOnLongClickListener {
+                val dialogClickListener = DialogInterface.OnClickListener { dialog, which ->
+                    when (which) {
+                        DialogInterface.BUTTON_POSITIVE -> Toast.makeText(
+                            itemView.context,
+                            "Хорошо",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        DialogInterface.BUTTON_NEGATIVE -> Toast.makeText(
+                            itemView.context,
+                            "Отмена",
+                            Toast.LENGTH_SHORT
+                        ).show()
+
+                    }
+                }
+
+                val alertDialog = androidx.appcompat.app.AlertDialog.Builder(itemView.context)
+                    .setTitle("Убрать книгу из Избранного?")
+                    .setPositiveButton("Да", dialogClickListener)
+                    .setNegativeButton("Отмена", dialogClickListener)
+                    .create().show()
+
+                true
+            }
+
+
 //Нажатие
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, DetailActivity::class.java)
                 intent.putExtra("book", bookItem)
                 itemView.context.startActivity(intent)
-
-
                 println("Click")
             }
 

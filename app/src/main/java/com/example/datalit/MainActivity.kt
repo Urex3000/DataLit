@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
             mainAdapter = MainAdapter()
             adapter = mainAdapter
         }
+
     }
 
     private fun observeData() {
@@ -56,6 +57,7 @@ class MainActivity : AppCompatActivity() {
 
         })
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.option_bar, menu)
