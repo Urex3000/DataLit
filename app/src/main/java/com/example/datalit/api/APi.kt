@@ -18,7 +18,10 @@ interface BooksApiService {
     @GET("volumes")
     fun getProperties(
         @Query("q") query: String,
-        @Query("key") api_key: String
+        @Query("key") api_key: String,
+        @Query("maxResults") result_size: String = "40",
+        @Query("orderBy") sorting: String,
+        @Query("langRestrict") lang: String = "ru"
     ):
             Call<BookList>
 }

@@ -9,9 +9,9 @@ class BooksRepo() {
         private const val API_KEY = "AIzaSyCBMnwHbPJbs6AA3sJUO0XcLiwLn4aJXfE"
     }
 
-    fun getData(query: String): Call<BookList> {
+    fun getData(query: String, sorting: String): Call<BookList> {
         val call = BooksApi.retrofitService.getProperties(
-            query, API_KEY
+            query, API_KEY, "40", sorting
         )
         return call
     }

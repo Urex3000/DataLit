@@ -19,13 +19,13 @@ class MainViewModel(private val repo: BooksRepo) : ViewModel() {
     }
 
     init {
-        loadData("СССР")
+        loadData("СССР", "relevance")
     }
 
 
-    fun loadData(query: String) {
+    fun loadData(query: String, orderBy: String) {
 
-        val call = repo.getData(query)
+        val call = repo.getData(query, orderBy)
         call.enqueue(object : Callback<BookList> {
             override fun onResponse(call: Call<BookList>, response: Response<BookList>) {
                 val items = response.body()?.items

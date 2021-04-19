@@ -43,5 +43,25 @@
         </menu>
     </item>
 
+    <item
+        android:id="@+id/btSort"
+        android:title="Сортировать"
+        app:showAsAction="ifRoom">
+        <menu>
+            <group
+                android:id="@+id/orderBy"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/revelant"
+                    android:title="Популярные" />
+                <item
+                    android:id="@+id/newest"
+                    android:title="Новые" />
+
+            </group>
+
+        </menu>
+    </item>
+
 
 </menu>

@@ -75,6 +75,12 @@ class MainActivity : AppCompatActivity() {
                     if (menu.findItem(R.id.srchTitle)?.isChecked == true) true else false
                 val mSrchJanr = if (menu.findItem(R.id.srchJanr)?.isChecked == true) true else false
                 println("AAAAAAA $mSrchAuth, $mSrchTitle, $mSrchJanr")
+
+                val orderBy = if (menu.findItem(R.id.newest)?.isChecked == true) true else false
+                //сортировка
+                val sorting = if (orderBy) "newest"
+                else "relevance"
+
                 //глубокий поиск
                 val needles = if (mSrchTitle) "intitle:"
                 else if (mSrchAuth) "inauthor:"
@@ -83,8 +89,8 @@ class MainActivity : AppCompatActivity() {
 
 
                 if (mSearchView.isNotEmpty()) {
-                    myViewModel.loadData("$needles${p0.toString()}")
-                    println("AAAAAAA $needles ${p0.toString()}")
+                    myViewModel.loadData("$needles${p0.toString()}", "$sorting")
+                    println("AAAAAAA $needles ${p0.toString()} $sorting")
                 } else {
                     Toast.makeText(this@MainActivity, "Пустой запрос", Toast.LENGTH_LONG).show()
                 }
@@ -138,7 +144,24 @@ class MainActivity : AppCompatActivity() {
 
                 }
             }
+            R.id.newest -> {
+                if (item.isChecked) {
+                    item.setChecked(false)
 
+                } else {
+                    item.setChecked(true)
+
+                }
+            }
+            R.id.revelant -> {
+                if (item.isChecked) {
+                    item.setChecked(false)
+
+                } else {
+                    item.setChecked(true)
+
+                }
+            }
         }
         return super.onOptionsItemSelected(item)
     }
