@@ -10,8 +10,8 @@ class FavoriteRepository(private val daoClass: DaoClass) {
         daoClass.insert(bookFav)
     }
 
-    fun deleteFromFav(bookFav: DatabaseBook) {
-        daoClass.delete(bookFav)
+    fun deleteFromFav(title: String?) {
+        daoClass.delete(title)
     }
 
     fun deleteFavList() {

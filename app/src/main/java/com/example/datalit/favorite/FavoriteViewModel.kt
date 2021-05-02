@@ -27,9 +27,9 @@ class FavoriteViewModel(application: Application) : AndroidViewModel(application
         }
     }
 
-    fun delBook(bookFav: DatabaseBook) {
+    fun delBook(title: String?) {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.deleteFromFav(bookFav)
+            repository.deleteFromFav(title)
         }
     }
 

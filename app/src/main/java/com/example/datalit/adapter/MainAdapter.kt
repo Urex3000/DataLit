@@ -1,5 +1,6 @@
 package com.example.datalit.adapter
 
+import android.app.Application
 import android.content.DialogInterface
 import android.content.Intent
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.datalit.R
 import com.example.datalit.bookdetail.DetailActivity
+import com.example.datalit.favorite.FavoriteViewModel
 import com.example.datalit.model.BookItem
 
 
@@ -72,11 +74,14 @@ class MainAdapter() :
             itemView.setOnLongClickListener {
                 val dialogClickListener = DialogInterface.OnClickListener { dialog, which ->
                     when (which) {
-                        DialogInterface.BUTTON_POSITIVE -> Toast.makeText(
-                            itemView.context,
-                            "Хорошо",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        DialogInterface.BUTTON_POSITIVE -> {
+                            FavoriteViewModel(application = Application()).delBook(bookItem.volumeInfo?.title)
+                            Toast.makeText(
+                                itemView.context,
+                                "Хорошо",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                         DialogInterface.BUTTON_NEGATIVE -> Toast.makeText(
                             itemView.context,
                             "Отмена",
